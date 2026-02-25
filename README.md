@@ -14,7 +14,17 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+
+🛡️ SafeSignal — AWS-Powered Domestic Violence Emergency Response System
+Every 20 seconds, someone becomes a victim of domestic violence — and in those critical moments, a single tap can save a life.
+SafeSignal is an emergency response platform designed to protect victims of domestic violence through an instant, automated workflow triggered by a panic button. When a victim is in danger and cannot safely make a call or send a message, one tap silently activates a full emergency response pipeline — no typing, no calling, no delay.
+The moment the panic button is pressed:
+
+A case is automatically created with the victim's profile, location, and incident details
+Authorities are immediately alerted with real-time notifications for rapid response
+The entire flow is orchestrated through AWS Step Functions, ensuring every step executes reliably and at scale — even under pressure
+
+
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
