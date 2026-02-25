@@ -24,16 +24,39 @@ A brief overview of your project and its purpose. Mention which problem statemen
 ![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+
+Visually design cloud workflows by connecting AWS services (Lambda, S3, SNS, SQS, Step Functions, etc.) on an interactive canvas
+Configure each node with service-specific parameters directly in the UI
+Execute workflows in real-time and monitor the status of each step with live feedback
+Save and reload workflow templates for reuse across projects
+Supports conditional branching and parallel execution paths in the workflow
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+
+Our platform is a drag-and-drop AWS Workflow Builder built with React that allows users to:
+
+Visually design cloud workflows by connecting AWS services (Lambda, S3, SNS, SQS, Step Functions, etc.) on an interactive canvas
+Configure each node with service-specific parameters directly in the UI
+Execute workflows in real-time and monitor the status of each step with live feedback
+Save and reload workflow templates for reuse across projects
+Supports conditional branching and parallel execution paths in the workflow
+
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+
+Frontend: React.js with React Flow for the interactive drag-and-drop canvas
+Workflow Execution: AWS Step Functions to orchestrate and execute the defined workflows
+Backend: Node.js / AWS Lambda functions to handle API calls and trigger executions
+Cloud Services Integration: AWS SDK (boto3 / AWS SDK for JS) to interact with S3, Lambda, SNS, SQS
+Auth & Deployment: AWS Amplify / Cognito for authentication, deployed on AWS
+State Management: React Context / Zustand for managing workflow state on the frontend
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+
+Translating visual graphs to Step Functions ASL — converting the React Flow node-edge graph into valid Amazon States Language JSON was the biggest technical challenge
+Real-time execution feedback — syncing live Step Function execution status back to the UI required polling and WebSocket handling
+Dynamic node configuration — building a flexible config panel that adapts to each AWS service's unique parameters without hardcoding every schema
+Error handling in pipelines — gracefully surfacing failures mid-workflow so users can debug without leaving the UI
 
 ## 🏃 How to Run
 1. Clone the repository  
