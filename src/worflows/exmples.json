@@ -1,0 +1,318 @@
+{
+    "workflow_input_format": {
+      "description": "Standard input format for all workflows from React",
+      "structure": {
+        "workflowConfig": {
+          "workflowId": "unique-workflow-id",
+          "workflowType": "approval|notification|processing|custom",
+          "workflowName": "Human readable name",
+          "version": "1.0",
+          "createdBy": "user-id",
+          "totalSteps": 5,
+          "steps": [
+            {
+              "stepId": "step-1",
+              "stepType": "start|contact|wait|condition|parallel|process|end",
+              "stepName": "Step Display Name",
+              "config": {},
+              "nextStep": "step-2|conditional"
+            }
+          ]
+        },
+        "workflowData": {
+          "requestId": "req-123",
+          "userId": "user-456", 
+          "data": "any workflow specific data",
+          "metadata": {}
+        }
+      }
+    },
+  
+    "example_workflows": {
+      "contact_approval_workflow": {
+        "description": "Your original Start->Contact->Wait->Stop workflow",
+        "input": {
+          "workflowConfig": {
+            "workflowId": "contact-approval-v1",
+            "workflowType": "approval",
+            "workflowName": "Contact Approval Workflow",
+            "version": "1.0",
+            "createdBy": "react-ui",
+            "totalSteps": 4,
+            "steps": [
+              {
+                "stepId": "start",
+                "stepType": "start",
+                "stepName": "Initialize Request",
+                "config": {
+                  "initializeData": true,
+                  "logStart": true
+                },
+                "nextStep": "contact"
+              },
+              {
+                "stepId": "contact", 
+                "stepType": "contact",
+                "stepName": "Send Approval Request",
+                "config": {
+                  "contactType": "email",
+                  "contactMethod": "sns",
+                  "approvers": ["manager@company.com"],
+                  "timeoutSeconds": 300,
+                  "requireResponse": true
+                },
+                "nextStep": "wait"
+              },
+              {
+                "stepId": "wait",
+                "stepType": "wait", 
+                "stepName": "Wait for Response",
+                "config": {
+                  "waitType": "contact_response",
+                  "maxWaitTime": 300,
+                  "checkInterval": 30
+                },
+                "nextStep": "end"
+              },
+              {
+                "stepId": "end",
+                "stepType": "end",
+                "stepName": "Complete Workflow",
+                "config": {
+                  "finalizeResults": true,
+                  "sendNotification": true
+                },
+                "nextStep": null
+              }
+            ]
+          },
+          "workflowData": {
+            "requestId": "REQ-2025-001",
+            "userId": "user-123",
+            "requestType": "budget_approval",
+            "amount": 5000,
+            "description": "Marketing campaign budget",
+            "department": "Marketing",
+            "metadata": {
+              "priority": "high",
+              "deadline": "2025-07-10"
+            }
+          }
+        }
+      },
+  
+      "multi_step_processing_workflow": {
+        "description": "Complex workflow with conditions and parallel processing",
+        "input": {
+          "workflowConfig": {
+            "workflowId": "multi-step-processing-v1",
+            "workflowType": "processing",
+            "workflowName": "Multi-Step Data Processing",
+            "version": "1.0", 
+            "createdBy": "react-ui",
+            "totalSteps": 6,
+            "steps": [
+              {
+                "stepId": "validate",
+                "stepType": "start",
+                "stepName": "Validate Input",
+                "config": {
+                  "validateSchema": true,
+                  "requiredFields": ["userId", "dataType", "payload"]
+                },
+                "nextStep": "condition-check"
+              },
+              {
+                "stepId": "condition-check",
+                "stepType": "condition", 
+                "stepName": "Check Processing Type",
+                "config": {
+                  "conditionType": "data_size",
+                  "conditions": [
+                    {
+                      "if": "$.workflowData.payload.size > 1000",
+                      "then": "parallel-process",
+                      "else": "single-process"
+                    }
+                  ]
+                },
+                "nextStep": "conditional"
+              },
+              {
+                "stepId": "parallel-process",
+                "stepType": "parallel",
+                "stepName": "Parallel Processing",
+                "config": {
+                  "branches": [
+                    {
+                      "branchId": "branch-1",
+                      "function": "ProcessDataChunk1Function"
+                    },
+                    {
+                      "branchId": "branch-2", 
+                      "function": "ProcessDataChunk2Function"
+                    }
+                  ],
+                  "waitForAll": true
+                },
+                "nextStep": "consolidate"
+              },
+              {
+                "stepId": "single-process",
+                "stepType": "process",
+                "stepName": "Single Processing",
+                "config": {
+                  "function": "ProcessSingleDataFunction",
+                  "timeout": 300
+                },
+                "nextStep": "consolidate"
+              },
+              {
+                "stepId": "consolidate",
+                "stepType": "process",
+                "stepName": "Consolidate Results", 
+                "config": {
+                  "function": "ConsolidateResultsFunction",
+                  "mergeResults": true
+                },
+                "nextStep": "notify"
+              },
+              {
+                "stepId": "notify",
+                "stepType": "contact",
+                "stepName": "Notify Completion",
+                "config": {
+                  "contactType": "notification",
+                  "recipients": ["user@company.com"],
+                  "template": "processing_complete"
+                },
+                "nextStep": null
+              }
+            ]
+          },
+          "workflowData": {
+            "requestId": "PROC-2025-001",
+            "userId": "user-456",
+            "dataType": "customer_data",
+            "payload": {
+              "size": 1500,
+              "format": "json",
+              "data": "large dataset here"
+            },
+            "processingOptions": {
+              "includeAnalytics": true,
+              "generateReport": true
+            }
+          }
+        }
+      },
+  
+      "simple_notification_workflow": {
+        "description": "Simple notification workflow",
+        "input": {
+          "workflowConfig": {
+            "workflowId": "simple-notification-v1",
+            "workflowType": "notification", 
+            "workflowName": "Simple Notification",
+            "version": "1.0",
+            "createdBy": "react-ui",
+            "totalSteps": 2,
+            "steps": [
+              {
+                "stepId": "prepare",
+                "stepType": "start",
+                "stepName": "Prepare Notification",
+                "config": {
+                  "templateId": "welcome-template",
+                  "personalize": true
+                },
+                "nextStep": "send"
+              },
+              {
+                "stepId": "send",
+                "stepType": "contact",
+                "stepName": "Send Notification",
+                "config": {
+                  "contactType": "email",
+                  "template": "welcome-email",
+                  "immediateDelivery": true
+                },
+                "nextStep": null
+              }
+            ]
+          },
+          "workflowData": {
+            "requestId": "NOTIF-2025-001",
+            "userId": "new-user-789",
+            "recipientEmail": "newuser@company.com",
+            "personalizedData": {
+              "firstName": "John",
+              "companyName": "Acme Corp"
+            }
+          }
+        }
+      }
+    },
+  
+    "react_integration": {
+      "description": "How to integrate with React workflow designer",
+      
+      "react_workflow_builder_output": {
+        "description": "Expected JSON structure from your React workflow builder",
+        "example_function": "const generateStepFunctionInput = (reactWorkflowConfig, workflowData) => {\n  return {\n    workflowConfig: {\n      workflowId: reactWorkflowConfig.id,\n      workflowType: reactWorkflowConfig.type,\n      workflowName: reactWorkflowConfig.name,\n      version: reactWorkflowConfig.version || '1.0',\n      createdBy: getCurrentUser().id,\n      totalSteps: reactWorkflowConfig.steps.length,\n      steps: reactWorkflowConfig.steps.map(step => ({\n        stepId: step.id,\n        stepType: step.type,\n        stepName: step.displayName,\n        config: step.configuration,\n        nextStep: step.nextStepId\n      }))\n    },\n    workflowData: workflowData\n  };\n};"
+      },
+  
+      "execution_from_react": {
+        "description": "Execute Step Functions from React",
+        "aws_sdk_example": "import { StepFunctionsClient, StartExecutionCommand } from '@aws-sdk/client-sfn';\n\nconst executeWorkflow = async (workflowJson, workflowData) => {\n  const client = new StepFunctionsClient({ region: 'us-east-1' });\n  \n  const input = {\n    workflowConfig: workflowJson,\n    workflowData: workflowData\n  };\n  \n  const command = new StartExecutionCommand({\n    stateMachineArn: 'arn:aws:states:region:account:stateMachine:GenericWorkflowStateMachine',\n    name: `workflow-${Date.now()}`,\n    input: JSON.stringify(input)\n  });\n  \n  try {\n    const result = await client.send(command);\n    return result.executionArn;\n  } catch (error) {\n    console.error('Workflow execution failed:', error);\n    throw error;\n  }\n};"
+      }
+    },
+  
+    "lambda_functions_needed": {
+      "description": "Lambda functions you need to implement for the generic workflow",
+      "functions": [
+        {
+          "name": "ValidateWorkflowFunction",
+          "purpose": "Validates workflow configuration JSON",
+          "input": "Complete workflow input",
+          "output": "Validation result with isValid boolean"
+        },
+        {
+          "name": "ProcessWorkflowStepFunction", 
+          "purpose": "Main orchestrator - processes any step type",
+          "input": "Current step config and context",
+          "output": "Step result with action and next step info"
+        },
+        {
+          "name": "ContactStepFunction",
+          "purpose": "Handles all contact/notification steps",
+          "input": "Contact configuration and data",
+          "output": "Contact result with tracking info"
+        },
+        {
+          "name": "CheckContactResponseFunction",
+          "purpose": "Checks status of contact responses",
+          "input": "Contact result and execution context", 
+          "output": "Response status (APPROVED/REJECTED/TIMEOUT)"
+        },
+        {
+          "name": "EvaluateConditionFunction",
+          "purpose": "Evaluates conditional logic for branching",
+          "input": "Condition config and workflow data",
+          "output": "Next step index and updated context"
+        },
+        {
+          "name": "ExecuteParallelBranchFunction",
+          "purpose": "Executes parallel workflow branches",
+          "input": "Branch configuration",
+          "output": "Branch execution result"
+        },
+        {
+          "name": "CompleteWorkflowFunction",
+          "purpose": "Finalizes workflow and generates results",
+          "input": "Final execution context",
+          "output": "Completion summary and notifications"
+        }
+      ]
+    }
+  }

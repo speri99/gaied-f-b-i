@@ -1,0 +1,480 @@
+{
+    "Comment": "Generic Multi-Workflow Step Function - Handles any workflow based on JSON configuration",
+    "StartAt": "InitializeWorkflow",
+    "States": {
+      "InitializeWorkflow": {
+        "Type": "Pass",
+        "Comment": "Initialize workflow with metadata",
+        "Parameters": {
+          "executionId.$": "$$.Execution.Name",
+          "startTime.$": "$$.Execution.StartTime",
+          "workflowConfig.$": "$.workflowConfig",
+          "workflowData.$": "$.workflowData",
+          "currentStepIndex": 0,
+          "executionContext": {
+            "results": {},
+            "errors": []
+          }
+        },
+        "Next": "ValidateWorkflowConfig"
+      },
+      "ValidateWorkflowConfig": {
+        "Type": "Task",
+        "Comment": "Validate workflow configuration and prepare execution plan",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${ValidateWorkflowFunction}",
+          "Payload.$": "$"
+        },
+        "ResultPath": "$.validationResult",
+        "Retry": [
+          {
+            "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+            "IntervalSeconds": 2,
+            "MaxAttempts": 3,
+            "BackoffRate": 2.0
+          }
+        ],
+        "Catch": [
+          {
+            "ErrorEquals": ["States.ALL"],
+            "Next": "HandleWorkflowError",
+            "ResultPath": "$.error"
+          }
+        ],
+        "Next": "CheckValidation"
+      },
+      "CheckValidation": {
+        "Type": "Choice",
+        "Comment": "Check if workflow configuration is valid",
+        "Choices": [
+          {
+            "Variable": "$.validationResult.isValid",
+            "BooleanEquals": true,
+            "Next": "ProcessWorkflowStep"
+          }
+        ],
+        "Default": "HandleValidationError"
+      },
+      "ProcessWorkflowStep": {
+        "Type": "Task",
+        "Comment": "Process current workflow step based on step type",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${ProcessWorkflowStepFunction}",
+          "Payload": {
+            "executionId.$": "$.executionId",
+            "workflowConfig.$": "$.workflowConfig",
+            "workflowData.$": "$.workflowData",
+            "currentStepIndex.$": "$.currentStepIndex",
+            "executionContext.$": "$.executionContext",
+            "validationResult.$": "$.validationResult"
+          }
+        },
+        "ResultPath": "$.stepResult",
+        "Retry": [
+          {
+            "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+            "IntervalSeconds": 2,
+            "MaxAttempts": 3,
+            "BackoffRate": 2.0
+          }
+        ],
+        "Catch": [
+          {
+            "ErrorEquals": ["States.ALL"],
+            "Next": "HandleStepError",
+            "ResultPath": "$.error"
+          }
+        ],
+        "Next": "EvaluateStepResult"
+      },
+      "EvaluateStepResult": {
+        "Type": "Choice",
+        "Comment": "Evaluate step result and determine next action",
+        "Choices": [
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "WAIT",
+            "Next": "HandleWaitStep"
+          },
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "CONTACT",
+            "Next": "HandleContactStep"
+          },
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "CONDITION",
+            "Next": "HandleConditionStep"
+          },
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "PARALLEL",
+            "Next": "HandleParallelStep"
+          },
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "COMPLETE",
+            "Next": "CompleteWorkflow"
+          },
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "NEXT",
+            "Next": "MoveToNextStep"
+          },
+          {
+            "Variable": "$.stepResult.action",
+            "StringEquals": "ERROR",
+            "Next": "HandleStepError"
+          }
+        ],
+        "Default": "MoveToNextStep"
+      },
+      "HandleWaitStep": {
+        "Type": "Wait",
+        "Comment": "Handle wait steps with dynamic duration",
+        "SecondsPath": "$.stepResult.waitDuration",
+        "Next": "UpdateExecutionContext"
+      },
+      "HandleContactStep": {
+        "Type": "Task",
+        "Comment": "Handle contact/notification steps",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${ContactStepFunction}",
+          "Payload": {
+            "contactConfig.$": "$.stepResult.contactConfig",
+            "executionId.$": "$.executionId",
+            "workflowData.$": "$.workflowData",
+            "stepData.$": "$.stepResult.stepData"
+          }
+        },
+        "ResultPath": "$.contactResult",
+        "Next": "WaitForContactResponse"
+      },
+      "WaitForContactResponse": {
+        "Type": "Wait",
+        "Comment": "Wait for contact response",
+        "SecondsPath": "$.stepResult.contactConfig.timeoutSeconds",
+        "Next": "CheckContactResponse"
+      },
+      "CheckContactResponse": {
+        "Type": "Task",
+        "Comment": "Check contact response status",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${CheckContactResponseFunction}",
+          "Payload": {
+            "contactResult.$": "$.contactResult",
+            "executionId.$": "$.executionId",
+            "stepConfig.$": "$.stepResult"
+          }
+        },
+        "ResultPath": "$.contactResponseResult",
+        "Next": "EvaluateContactResponse"
+      },
+      "EvaluateContactResponse": {
+        "Type": "Choice",
+        "Comment": "Evaluate contact response",
+        "Choices": [
+          {
+            "Variable": "$.contactResponseResult.status",
+            "StringEquals": "APPROVED",
+            "Next": "UpdateExecutionContext"
+          },
+          {
+            "Variable": "$.contactResponseResult.status",
+            "StringEquals": "REJECTED", 
+            "Next": "HandleContactRejection"
+          },
+          {
+            "Variable": "$.contactResponseResult.status",
+            "StringEquals": "TIMEOUT",
+            "Next": "HandleContactTimeout"
+          }
+        ],
+        "Default": "WaitForContactResponse"
+      },
+      "HandleContactRejection": {
+        "Type": "Task",
+        "Comment": "Handle contact rejection",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${HandleRejectionFunction}",
+          "Payload": {
+            "rejectionReason.$": "$.contactResponseResult.reason",
+            "executionId.$": "$.executionId",
+            "workflowConfig.$": "$.workflowConfig"
+          }
+        },
+        "ResultPath": "$.rejectionResult",
+        "Next": "NotifyRejection"
+      },
+      "HandleContactTimeout": {
+        "Type": "Task",
+        "Comment": "Handle contact timeout",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${HandleTimeoutFunction}",
+          "Payload": {
+            "timeoutReason": "Contact response timeout",
+            "executionId.$": "$.executionId",
+            "contactConfig.$": "$.stepResult.contactConfig"
+          }
+        },
+        "ResultPath": "$.timeoutResult",
+        "Next": "NotifyTimeout"
+      },
+      "HandleConditionStep": {
+        "Type": "Task",
+        "Comment": "Handle conditional branching steps",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${EvaluateConditionFunction}",
+          "Payload": {
+            "conditionConfig.$": "$.stepResult.conditionConfig",
+            "workflowData.$": "$.workflowData",
+            "executionContext.$": "$.executionContext"
+          }
+        },
+        "ResultPath": "$.conditionResult",
+        "Next": "ApplyConditionResult"
+      },
+      "ApplyConditionResult": {
+        "Type": "Pass",
+        "Comment": "Apply condition result to execution context",
+        "Parameters": {
+          "executionId.$": "$.executionId",
+          "workflowConfig.$": "$.workflowConfig", 
+          "workflowData.$": "$.workflowData",
+          "currentStepIndex.$": "$.conditionResult.nextStepIndex",
+          "executionContext.$": "$.conditionResult.updatedContext"
+        },
+        "Next": "ProcessWorkflowStep"
+      },
+      "HandleParallelStep": {
+        "Type": "Parallel",
+        "Comment": "Handle parallel execution steps",
+        "Branches": [
+          {
+            "StartAt": "ExecuteParallelBranch",
+            "States": {
+              "ExecuteParallelBranch": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": {
+                  "FunctionName": "${ExecuteParallelBranchFunction}",
+                  "Payload": {
+                    "branchConfig.$": "$.stepResult.parallelConfig.branches[0]",
+                    "workflowData.$": "$.workflowData",
+                    "executionId.$": "$.executionId"
+                  }
+                },
+                "End": true
+              }
+            }
+          }
+        ],
+        "ResultPath": "$.parallelResults",
+        "Next": "ConsolidateParallelResults"
+      },
+      "ConsolidateParallelResults": {
+        "Type": "Task",
+        "Comment": "Consolidate parallel execution results",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${ConsolidateParallelFunction}",
+          "Payload": {
+            "parallelResults.$": "$.parallelResults",
+            "executionContext.$": "$.executionContext",
+            "stepConfig.$": "$.stepResult"
+          }
+        },
+        "ResultPath": "$.consolidatedResult",
+        "Next": "UpdateExecutionContext"
+      },
+      "UpdateExecutionContext": {
+        "Type": "Pass",
+        "Comment": "Update execution context with step results",
+        "Parameters": {
+          "executionId.$": "$.executionId",
+          "workflowConfig.$": "$.workflowConfig",
+          "workflowData.$": "$.workflowData", 
+          "currentStepIndex.$": "$.stepResult.nextStepIndex",
+          "executionContext.$": "$.stepResult.updatedContext"
+        },
+        "Next": "CheckWorkflowCompletion"
+      },
+      "MoveToNextStep": {
+        "Type": "Pass",
+        "Comment": "Move to next step in workflow",
+        "Parameters": {
+          "executionId.$": "$.executionId",
+          "workflowConfig.$": "$.workflowConfig",
+          "workflowData.$": "$.workflowData",
+          "currentStepIndex.$": "States.MathAdd($.currentStepIndex, 1)",
+          "executionContext.$": "$.stepResult.updatedContext"
+        },
+        "Next": "CheckWorkflowCompletion"
+      },
+      "CheckWorkflowCompletion": {
+        "Type": "Choice",
+        "Comment": "Check if workflow is complete",
+        "Choices": [
+          {
+            "Variable": "$.currentStepIndex",
+            "NumericGreaterThanEqualsPath": "$.workflowConfig.totalSteps",
+            "Next": "CompleteWorkflow"
+          }
+        ],
+        "Default": "ProcessWorkflowStep"
+      },
+      "CompleteWorkflow": {
+        "Type": "Task",
+        "Comment": "Complete workflow and generate final results",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${CompleteWorkflowFunction}",
+          "Payload": {
+            "executionId.$": "$.executionId",
+            "workflowConfig.$": "$.workflowConfig",
+            "executionContext.$": "$.executionContext",
+            "completionTime.$": "$$.State.EnteredTime"
+          }
+        },
+        "ResultPath": "$.completionResult", 
+        "Next": "NotifyWorkflowCompletion"
+      },
+      "NotifyWorkflowCompletion": {
+        "Type": "Task",
+        "Comment": "Send workflow completion notification",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "${WorkflowCompletionTopic}",
+          "Message.$": "$.completionResult.message",
+          "Subject.$": "$.completionResult.subject",
+          "MessageAttributes": {
+            "workflowType": {
+              "DataType": "String",
+              "StringValue.$": "$.workflowConfig.workflowType"
+            },
+            "executionId": {
+              "DataType": "String", 
+              "StringValue.$": "$.executionId"
+            }
+          }
+        },
+        "Next": "WorkflowSuccess"
+      },
+      "WorkflowSuccess": {
+        "Type": "Succeed",
+        "Comment": "Workflow completed successfully"
+      },
+      "HandleValidationError": {
+        "Type": "Task",
+        "Comment": "Handle workflow validation errors",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${HandleValidationErrorFunction}",
+          "Payload": {
+            "validationErrors.$": "$.validationResult.errors",
+            "executionId.$": "$.executionId",
+            "workflowConfig.$": "$.workflowConfig"
+          }
+        },
+        "ResultPath": "$.validationErrorResult",
+        "Next": "NotifyValidationError"
+      },
+      "HandleStepError": {
+        "Type": "Task",
+        "Comment": "Handle step execution errors",  
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "${HandleStepErrorFunction}",
+          "Payload": {
+            "error.$": "$.error",
+            "executionId.$": "$.executionId",
+            "currentStep.$": "$.currentStepIndex",
+            "workflowConfig.$": "$.workflowConfig"
+          }
+        },
+        "ResultPath": "$.stepErrorResult",
+        "Next": "NotifyStepError"
+      },
+      "HandleWorkflowError": {
+        "Type": "Task",
+        "Comment": "Handle general workflow errors",
+        "Resource": "arn:aws:states:::lambda:invoke", 
+        "Parameters": {
+          "FunctionName": "${HandleWorkflowErrorFunction}",
+          "Payload": {
+            "error.$": "$.error",
+            "executionId.$": "$.executionId",
+            "workflowConfig.$": "$.workflowConfig"
+          }
+        },
+        "ResultPath": "$.workflowErrorResult",
+        "Next": "NotifyWorkflowError"
+      },
+      "NotifyRejection": {
+        "Type": "Task",
+        "Comment": "Notify workflow rejection",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "${WorkflowRejectionTopic}",
+          "Message.$": "$.rejectionResult.message",
+          "Subject": "Workflow Rejected"
+        },
+        "Next": "WorkflowFailed"
+      },
+      "NotifyTimeout": {
+        "Type": "Task",
+        "Comment": "Notify workflow timeout",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "${WorkflowTimeoutTopic}",
+          "Message.$": "$.timeoutResult.message", 
+          "Subject": "Workflow Timeout"
+        },
+        "Next": "WorkflowFailed"
+      },
+      "NotifyValidationError": {
+        "Type": "Task",
+        "Comment": "Notify validation error",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "${WorkflowErrorTopic}",
+          "Message.$": "$.validationErrorResult.message",
+          "Subject": "Workflow Validation Error"
+        },
+        "Next": "WorkflowFailed"
+      },
+      "NotifyStepError": {
+        "Type": "Task",
+        "Comment": "Notify step error", 
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "${WorkflowErrorTopic}",
+          "Message.$": "$.stepErrorResult.message",
+          "Subject": "Workflow Step Error"
+        },
+        "Next": "WorkflowFailed"
+      },
+      "NotifyWorkflowError": {
+        "Type": "Task",
+        "Comment": "Notify general workflow error",
+        "Resource": "arn:aws:states:::sns:publish",
+        "Parameters": {
+          "TopicArn": "${WorkflowErrorTopic}",
+          "Message.$": "$.workflowErrorResult.message",
+          "Subject": "Workflow Error"
+        },
+        "Next": "WorkflowFailed"
+      },
+      "WorkflowFailed": {
+        "Type": "Fail",
+        "Comment": "Workflow execution failed"
+      }
+    }
+  }

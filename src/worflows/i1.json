@@ -1,0 +1,114 @@
+{
+    "workflowId": "workflow_1751026247473",
+    "config": {
+      "maxRetries": 3,
+      "globalTimeout": 3600,
+      "steps": [
+        {
+          "id": "node_1751026247473",
+          "type": "lambda",
+          "name": "Start",
+          "payload": {
+            "nodeType": "start",
+            "title": "Start",
+            "action": "initialize_workflow"
+          },
+          "onError": "continue"
+        },
+        {
+          "id": "node_1751026602781",
+          "type": "lambda",
+          "name": "Primary Email Contact",
+          "payload": {
+            "nodeType": "contact",
+            "title": "Contact",
+            "contactMethod": "email",
+            "contactType": "primary",
+            "duration": 5,
+            "unit": "minutes",
+            "action": "send_contact"
+          },
+          "onError": "continue"
+        },
+        {
+          "id": "node_1751026615204",
+          "type": "wait",
+          "name": "Wait 5 minutes",
+          "waitSeconds": 300,
+          "payload": {
+            "nodeType": "wait",
+            "title": "Wait",
+            "duration": 5,
+            "unit": "minutes"
+          },
+          "onError": "continue"
+        },
+        {
+          "id": "node_1751026617094",
+          "type": "choice",
+          "name": "Acknowledgment Check",
+          "payload": {
+            "nodeType": "ack",
+            "title": "Ack",
+            "duration": 5,
+            "unit": "minutes"
+          },
+          "choices": [
+            {
+              "condition": "acknowledgment_received",
+              "value": true,
+              "nextStepIndex": 4
+            },
+            {
+              "condition": "acknowledgment_received",
+              "value": false,
+              "nextStepIndex": 5
+            }
+          ],
+          "onError": "continue"
+        },
+        {
+          "id": "node_1751026621055",
+          "type": "lambda",
+          "name": "Stop - Acknowledged",
+          "payload": {
+            "nodeType": "stop",
+            "title": "Stop",
+            "duration": 5,
+            "unit": "minutes",
+            "action": "workflow_complete",
+            "reason": "acknowledged"
+          },
+          "onError": "continue"
+        },
+        {
+          "id": "node_1751026631593",
+          "type": "lambda",
+          "name": "Secondary Phone Contact",
+          "payload": {
+            "nodeType": "contact",
+            "title": "Contact",
+            "contactMethod": "phone",
+            "contactType": "secondary",
+            "duration": 5,
+            "unit": "minutes",
+            "action": "send_contact"
+          },
+          "onError": "continue"
+        }
+      ]
+    },
+    "context": {
+      "workflowType": "notification_cascade",
+      "originalNodeId": "node_1751026247473",
+      "contactInfo": {
+        "email": null,
+        "phone": null,
+        "template": null
+      },
+      "metadata": {
+        "createdAt": "2024-01-01T00:00:00Z",
+        "source": "react_workflow_builder"
+      }
+    }
+  }

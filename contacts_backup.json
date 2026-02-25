@@ -1,0 +1,4322 @@
+{
+    "Items": [
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Contact investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743740588003"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:11:09.135Z"
+            },
+            "UUID": {
+                "S": "66f1e853-165b-432a-8bce-fe34a96d3e21"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "updatedAt": {
+                "N": "1743292086906"
+            },
+            "longitude": {
+                "N": "-117.2892847202894"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "f2b371c7-022e-4eae-870c-64dc18751bb5"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "following up on this case, ack"
+                                    },
+                                    "timestamp": {
+                                        "N": "1743292086906"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1743292086906"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "33.1165910847262"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-05T04:47:49.752Z"
+            },
+            "longitude": {
+                "N": "-117.2891029404751"
+            },
+            "UUID": {
+                "S": "99b46328-4357-4de3-8895-b190822c8900"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11672602735118"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695952653"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T22:42:18.217Z"
+            },
+            "UUID": {
+                "S": "607cdd7c-42da-4e14-bf99-2debc1dfe8bd"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12155 Lioness Way, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12155 Lioness Way"
+            },
+            "updatedAt": {
+                "N": "1743292269241"
+            },
+            "longitude": {
+                "N": "-104.84822712174183"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "0710f640-79ea-4ebb-8c53-6286618aa68f"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "ack this message - no notification on ack"
+                                    },
+                                    "timestamp": {
+                                        "N": "1743292269241"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1743292269241"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "39.53582224321793"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743746168951"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:52:39.738Z"
+            },
+            "UUID": {
+                "S": "71b438b4-1b63-4de2-bfc3-496c7d2986c6"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.2891250585281"
+            },
+            "latitude": {
+                "N": "33.11674283384864"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:56.837Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "4f97b1df-12ca-4b34-9f17-f1243f33d523"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102328"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953172"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T20:56:03.359Z"
+            },
+            "UUID": {
+                "S": "82c78e38-0878-4bf4-9a09-12c554f31f2a"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "updatedAt": {
+                "N": "1743308734349"
+            },
+            "longitude": {
+                "N": "-104.77903233070663"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "f71f8fec-8034-4402-83df-cbc9b9a155b1"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "i ack"
+                                    },
+                                    "timestamp": {
+                                        "N": "1743308734349"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1743308734349"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "39.482310617229224"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:48:11.596Z"
+            },
+            "longitude": {
+                "N": "-117.28928975791972"
+            },
+            "UUID": {
+                "S": "23d800ac-e8cd-40e3-a148-9039d1c045af"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658313038254"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:55.758Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "aedd843b-49f9-435a-a6a8-abea89399874"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102345"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459660"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-27T17:24:14.799Z"
+            },
+            "UUID": {
+                "S": "606194fc-5aa7-4a4d-818c-86c5e7d55212"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "updatedAt": {
+                "N": "1743359866122"
+            },
+            "longitude": {
+                "N": "-117.28928762041595"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "2f20584f-0987-4b50-bf13-5ac283828327"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "tim is following up on this"
+                                    },
+                                    "timestamp": {
+                                        "N": "1743359866122"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1743359866122"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "33.116580362615586"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743746178437"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:58.602Z"
+            },
+            "UUID": {
+                "S": "d4cf335e-002c-4b2b-8443-b1eebeb22a25"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "latitude": {
+                "N": "33.11658265102304"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459659"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-20T21:23:21.305Z"
+            },
+            "UUID": {
+                "S": "fe7bb6d3-0fc1-44a2-a10a-458a52633325"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "updatedAt": {
+                "N": "1742696322555"
+            },
+            "longitude": {
+                "N": "-117.28928634460294"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "10257e5d-51aa-4d5b-8e2d-89c83aae98ac"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "i ack"
+                                    },
+                                    "timestamp": {
+                                        "N": "1742696322555"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1742696322555"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "33.116582155681485"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953168"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T21:20:50.829Z"
+            },
+            "UUID": {
+                "S": "a07d6e17-e68b-43f7-9506-a9eb1aa29578"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "updatedAt": {
+                "N": "1743447129998"
+            },
+            "longitude": {
+                "N": "-104.77903241884381"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "26bb4540-0aa7-490c-b772-9066036e7280"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "tim is working this case."
+                                    },
+                                    "timestamp": {
+                                        "N": "1743447129998"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1743447129998"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "39.48231064500098"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:53.802Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "fe832aa8-34a8-44eb-935b-608a300e6fce"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102375"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T15:33:03.093Z"
+            },
+            "longitude": {
+                "N": "-117.28933294826315"
+            },
+            "UUID": {
+                "S": "9d9189f1-3107-4d5d-9257-f8b5927556d7"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11663419890827"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:59.132Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "7eda311e-5dd1-4e52-ab36-f1491a56646e"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582651022966"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:47.432Z"
+            },
+            "longitude": {
+                "N": "-117.28925230230448"
+            },
+            "UUID": {
+                "S": "2afe366a-669c-42ae-a7a5-465a3dc41e54"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658089260324"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:00.160Z"
+            },
+            "longitude": {
+                "N": "-117.28925169914065"
+            },
+            "UUID": {
+                "S": "595ffbd3-785b-4af4-9cab-585e01d5b8d4"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658227783439"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743796869983"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T20:00:28.172Z"
+            },
+            "UUID": {
+                "S": "86f1bf4f-55ad-42b0-8b5f-c0f78719ab24"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28914558541197"
+            },
+            "latitude": {
+                "N": "33.11661606781923"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:38:33.657Z"
+            },
+            "longitude": {
+                "N": "-117.28925230277115"
+            },
+            "UUID": {
+                "S": "8613646f-b020-4e4d-9afe-a0dcc85bc78d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116580910910166"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459841"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:23:24.865Z"
+            },
+            "UUID": {
+                "S": "6818610f-2020-4259-b5ea-0a636cb320ec"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28927987570594"
+            },
+            "latitude": {
+                "N": "33.116578707349866"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459904"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-07T22:58:13.242Z"
+            },
+            "UUID": {
+                "S": "d2ed8b63-d882-4a33-8a09-f692e441984d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.2892847202894"
+            },
+            "latitude": {
+                "N": "33.1165910847262"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T21:43:55.820Z"
+            },
+            "longitude": {
+                "N": "-117.28928974098375"
+            },
+            "UUID": {
+                "S": "24eec946-7e4f-4ab2-bd8c-49b7a2801ba8"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.1165832453925"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:01.036Z"
+            },
+            "longitude": {
+                "N": "-117.28928975791972"
+            },
+            "UUID": {
+                "S": "212a21a3-93df-4c04-9567-9272c3167c5a"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658313038254"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:58.136Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "7b1c8581-5b5c-4b35-a17f-67403e3f4e1a"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582651023094"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459859"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-07T19:38:07.886Z"
+            },
+            "UUID": {
+                "S": "bf5ef739-09c2-4ffc-b9d1-588250835dfb"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928932964034"
+            },
+            "latitude": {
+                "N": "33.11661223584817"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:01.270Z"
+            },
+            "longitude": {
+                "N": "-117.28928975791972"
+            },
+            "UUID": {
+                "S": "1e287ba3-96d1-4599-81aa-e60319cbbfb8"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658313038254"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723460057"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:08:59.716Z"
+            },
+            "UUID": {
+                "S": "b9054df2-b924-4fab-aaab-3a7f83fc2a8b"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28927990542698"
+            },
+            "latitude": {
+                "N": "33.11657867306875"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743746181307"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:57.383Z"
+            },
+            "UUID": {
+                "S": "b2805b8a-c770-43d7-90c4-d576bd755d58"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "latitude": {
+                "N": "33.1165826510232"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:59.640Z"
+            },
+            "longitude": {
+                "N": "-117.28925169914068"
+            },
+            "UUID": {
+                "S": "26312cf7-1684-41c4-bcc5-f8a763200a3d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658227783443"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T06:24:44.084Z"
+            },
+            "longitude": {
+                "N": "-117.28928975791972"
+            },
+            "UUID": {
+                "S": "d488985c-6e61-4cb6-b1bf-10a42c78d58a"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658313038254"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:59.382Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "d049279f-2181-4ba2-9a4e-e469da6894b3"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582651022924"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459643"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-20T16:22:01.966Z"
+            },
+            "UUID": {
+                "S": "d12f07b3-9b1c-47df-8d99-2105578499bb"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928634460294"
+            },
+            "latitude": {
+                "N": "33.116582155681485"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:52:10.034Z"
+            },
+            "longitude": {
+                "N": "-117.28910095222061"
+            },
+            "UUID": {
+                "S": "4d4cf805-3216-40b5-9ff8-425b53e0c38d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11666487073717"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459697"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-20T16:49:46.812Z"
+            },
+            "UUID": {
+                "S": "8e61fc98-a651-4f18-8fad-e6dba7b125a6"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928634460294"
+            },
+            "latitude": {
+                "N": "33.116582155681485"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:55.176Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "a7703744-e44b-4f63-8f0e-70787f32f655"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582651023535"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:49:09.454Z"
+            },
+            "longitude": {
+                "N": "-117.28914443839871"
+            },
+            "UUID": {
+                "S": "66f2c05d-c153-4b6c-a25d-2edba6148082"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.1166321771953"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:53.043Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686682"
+            },
+            "UUID": {
+                "S": "6c73e24e-7541-4403-ac10-686a42a0ac9c"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102399"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:01.498Z"
+            },
+            "longitude": {
+                "N": "-117.28928975791972"
+            },
+            "UUID": {
+                "S": "14442618-f564-4a31-8aa4-e8fa104ec6ad"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658313038254"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:38:45.314Z"
+            },
+            "longitude": {
+                "N": "-117.28901678675986"
+            },
+            "UUID": {
+                "S": "1ed4358f-4b05-4129-a11b-3794226d2b34"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11666482679612"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723460102"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T17:56:55.425Z"
+            },
+            "UUID": {
+                "S": "4e735d55-31d6-4879-a838-9b1b6058b202"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.2892847202894"
+            },
+            "latitude": {
+                "N": "33.1165910847262"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695952655"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T21:21:35.111Z"
+            },
+            "UUID": {
+                "S": "978180a0-0e2b-42b5-9b0f-ebab4634e9f0"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "longitude": {
+                "N": "-104.77903250125136"
+            },
+            "latitude": {
+                "N": "39.48231038321167"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:57.894Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "1cd21100-5886-482d-a09d-8fef8dfa11d3"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102313"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459854"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-11T19:35:30.329Z"
+            },
+            "UUID": {
+                "S": "c43e2605-af28-4aaf-be38-70ccc54280ec"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928301949819"
+            },
+            "latitude": {
+                "N": "33.116585942113154"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:54.846Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686675"
+            },
+            "UUID": {
+                "S": "697a2ba0-44aa-415f-9d59-37d09a58d46a"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102362"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723460047"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:09:00.834Z"
+            },
+            "UUID": {
+                "S": "4978e2a1-5e90-4cea-83b9-70cc1e540520"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28927991985779"
+            },
+            "latitude": {
+                "N": "33.116578654993496"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953123"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-29T19:41:16.460Z"
+            },
+            "UUID": {
+                "S": "c6208924-3d26-4966-8636-37e8317530fc"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "288 S Scottsburg Ct, Aurora, CO 80018, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Aurora"
+            },
+            "streetAddress": {
+                "S": "288 S Scottsburg Court"
+            },
+            "longitude": {
+                "N": "-104.67217907479613"
+            },
+            "latitude": {
+                "N": "39.71097911465697"
+            },
+            "postalCode": {
+                "S": "80018"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459698"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-13T22:04:41.258Z"
+            },
+            "UUID": {
+                "S": "5e1ba6e9-9c7f-4be4-8e2c-00fcf7aea91d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928301949819"
+            },
+            "latitude": {
+                "N": "33.116585942113154"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743796139482"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-04-03T15:57:35.776Z"
+            },
+            "UUID": {
+                "S": "eabae3a2-f631-4b32-84cb-9a21f2cb13fe"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "19502 E Parker Square Dr, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "19502 East Parker Square Drive"
+            },
+            "longitude": {
+                "N": "-104.7628307960907"
+            },
+            "latitude": {
+                "N": "39.508199999637796"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:59.901Z"
+            },
+            "longitude": {
+                "N": "-117.28925169914068"
+            },
+            "UUID": {
+                "S": "fa1ed3c1-5746-4757-8997-f27aca19b4a2"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658227783442"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459908"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:26:28.724Z"
+            },
+            "UUID": {
+                "S": "aab5db63-4954-4818-ba7e-25c651aad7dd"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.2892847202894"
+            },
+            "latitude": {
+                "N": "33.1165910847262"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:46.242Z"
+            },
+            "longitude": {
+                "N": "-117.28925230264448"
+            },
+            "UUID": {
+                "S": "20193cb6-e7df-4f39-aa5a-0ac7aa510661"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116580906006114"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:56.291Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "8daff6de-fad9-420b-85f0-f4e353dd1056"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102334"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:46.670Z"
+            },
+            "longitude": {
+                "N": "-117.28925230230445"
+            },
+            "UUID": {
+                "S": "c1fe8d13-c626-4db4-b869-c2eb359c3e04"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658089260324"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:54.454Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686675"
+            },
+            "UUID": {
+                "S": "d2e206d1-0c34-4f8a-a2a0-b5631ebde213"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102368"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:38:49.793Z"
+            },
+            "longitude": {
+                "N": "-117.28901678675986"
+            },
+            "UUID": {
+                "S": "bfbb3819-45f2-4d96-8d1b-a0a0148fd46c"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11666482679612"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:53.440Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686682"
+            },
+            "UUID": {
+                "S": "9c88330e-3187-4077-bda3-c95212d957f8"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102377"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953599"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:27:22.658Z"
+            },
+            "UUID": {
+                "S": "53dc2e57-6041-4d5c-88ca-a3b7d67728b9"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "longitude": {
+                "N": "-104.77889413929711"
+            },
+            "latitude": {
+                "N": "39.48226734797659"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1900 Wright Place"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:51.814Z"
+            },
+            "longitude": {
+                "N": "-117.28938293"
+            },
+            "UUID": {
+                "S": "e4c7ef4d-18ff-4849-a862-018c607c90cf"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.12173461"
+            },
+            "postalCode": {
+                "S": "92008"
+            },
+            "formattedAddress": {
+                "S": "1900 Wright Pl, Carlsbad, CA 92008, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:56.040Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "ca438b98-a51e-436d-acaf-91b7af79aa4f"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582651023414"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:52.638Z"
+            },
+            "longitude": {
+                "N": "-117.28925232074656"
+            },
+            "UUID": {
+                "S": "b7e6e178-3978-4bb0-8241-5d9d097b9aa3"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658162048856"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953602"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:02:38.996Z"
+            },
+            "UUID": {
+                "S": "8600dc33-8f4d-4187-92a8-9f7e005ca0de"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "longitude": {
+                "N": "-104.77891697877689"
+            },
+            "latitude": {
+                "N": "39.482272418531394"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:54.137Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686675"
+            },
+            "UUID": {
+                "S": "87038ccc-0356-4398-8a8c-9c27da5bab88"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582651023734"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:47.053Z"
+            },
+            "longitude": {
+                "N": "-117.28925230230448"
+            },
+            "UUID": {
+                "S": "e62ce3a4-80c4-4fe7-9d51-5650ee5a6857"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658089260324"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1605 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:50:49.142Z"
+            },
+            "longitude": {
+                "N": "-117.28914394473227"
+            },
+            "UUID": {
+                "S": "428db2ad-15e3-4320-9ee9-9dd2df03a4e1"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11664042823175"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1605 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723459705"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-07T20:01:36.512Z"
+            },
+            "UUID": {
+                "S": "aaccf618-3ca5-4f92-8965-99341c63ddca"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928907350203"
+            },
+            "latitude": {
+                "N": "33.11661179186145"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743746184704"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:01.743Z"
+            },
+            "UUID": {
+                "S": "b5f6787c-0c46-4249-b4da-0b5f4c80e6b2"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28928975791972"
+            },
+            "latitude": {
+                "N": "33.11658313038254"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:57.131Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "3b778e93-484e-477b-a8da-37b57987d62e"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102325"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:58.369Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "fa17772a-be93-4334-a1de-144aaf4a215d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102306"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743723460053"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-06T17:51:06.603Z"
+            },
+            "UUID": {
+                "S": "334a78a0-72b9-4b07-90fd-bddb990bc4a0"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.2892847202894"
+            },
+            "latitude": {
+                "N": "33.1165910847262"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953175"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T18:09:19.775Z"
+            },
+            "UUID": {
+                "S": "49f34c45-c718-42ab-b3cb-f50790d28880"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "longitude": {
+                "N": "-104.7790324170181"
+            },
+            "latitude": {
+                "N": "39.48231064788538"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T16:12:08.022Z"
+            },
+            "longitude": {
+                "N": "-104.77897162641464"
+            },
+            "UUID": {
+                "S": "3b85cd8c-2cbb-4cd3-95bf-0cfc0b766700"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "39.48231874229989"
+            },
+            "postalCode": {
+                "S": "80134"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:56.538Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "2df25648-9849-4a37-89f0-cfcdbb2dbfc8"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102331"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "UNKNOWN"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:41:36.077Z"
+            },
+            "longitude": {
+                "N": "-117.28922039603776"
+            },
+            "UUID": {
+                "S": "04b56359-cdca-401d-974c-8cd4c107f993"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116677332228555"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743740535154"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-03-31T17:35:29.264Z"
+            },
+            "UUID": {
+                "S": "20b50bdb-f2e0-4673-88af-c0238861e6bb"
+            },
+            "updatedBy": {
+                "S": "system"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "updatedAt": {
+                "N": "1743442691793"
+            },
+            "longitude": {
+                "N": "-117.28928762041595"
+            },
+            "acknowledgment": {
+                "M": {
+                    "acknowledgedBy": {
+                        "S": "system"
+                    },
+                    "notes": {
+                        "L": [
+                            {
+                                "M": {
+                                    "id": {
+                                        "S": "e7328fe4-432a-48f9-8e26-68d05b76af65"
+                                    },
+                                    "type": {
+                                        "S": "acknowledgment"
+                                    },
+                                    "createdBy": {
+                                        "S": "system"
+                                    },
+                                    "content": {
+                                        "S": "tim is checking into this case"
+                                    },
+                                    "timestamp": {
+                                        "N": "1743442691793"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "escalationLevel": {
+                        "S": "Primary"
+                    },
+                    "status": {
+                        "S": "Acknowledged"
+                    },
+                    "timestamp": {
+                        "N": "1743442691793"
+                    }
+                }
+            },
+            "latitude": {
+                "N": "33.116580362615586"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743796800530"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T19:58:31.035Z"
+            },
+            "UUID": {
+                "S": "b9a6ddd8-40b8-426e-984c-c86795e6cb2f"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28933645359666"
+            },
+            "latitude": {
+                "N": "33.11662907565419"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:57.643Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "170f2c86-fbb0-4b48-b62d-df7b8df1e0c7"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102316"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:55.423Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686676"
+            },
+            "UUID": {
+                "S": "9c7c7edd-6004-41c4-8569-19cb35fa4dfa"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.1165826510235"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Case investigation"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743746175233"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:00.752Z"
+            },
+            "UUID": {
+                "S": "3010daa3-631b-48b5-9d3d-11a08d48d9e5"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            },
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "longitude": {
+                "N": "-117.28925169914068"
+            },
+            "latitude": {
+                "N": "33.116582277834326"
+            },
+            "postalCode": {
+                "S": "92011"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:58.891Z"
+            },
+            "longitude": {
+                "N": "-117.28925234686679"
+            },
+            "UUID": {
+                "S": "05e7f4ce-46d0-4c0b-9f6d-4f0b14129c2d"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658265102301"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:47:00.503Z"
+            },
+            "longitude": {
+                "N": "-117.28925169914065"
+            },
+            "UUID": {
+                "S": "0116ba0e-4559-4873-a31e-36fe8d206405"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.116582277834354"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        },
+        {
+            "dispatched": {
+                "BOOL": false
+            },
+            "accessLog": {
+                "L": [
+                    {
+                        "M": {
+                            "ipAddress": {
+                                "NULL": true
+                            },
+                            "action": {
+                                "S": "view"
+                            },
+                            "reason": {
+                                "S": "Viewing contact locations on map"
+                            },
+                            "userAgent": {
+                                "NULL": true
+                            },
+                            "userId": {
+                                "S": "USER-9755206f-063e-4d43-9b38-c3e3a9733eb1"
+                            },
+                            "timestamp": {
+                                "N": "1743695953169"
+                            }
+                        }
+                    }
+                ]
+            },
+            "identifier": {
+                "S": "12108722722"
+            },
+            "timestamp": {
+                "S": "2025-03-06T17:58:28.147Z"
+            },
+            "UUID": {
+                "S": "bdc0f729-1234-4e96-975c-e10770de3d93"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "formattedAddress": {
+                "S": "12898 Arezzo Cir, Parker, CO 80134, USA"
+            },
+            "state": {
+                "S": "CO"
+            },
+            "city": {
+                "S": "Parker"
+            },
+            "streetAddress": {
+                "S": "12898 Arezzo Circle"
+            },
+            "longitude": {
+                "N": "-104.77889413736374"
+            },
+            "latitude": {
+                "N": "39.48226734572018"
+            },
+            "postalCode": {
+                "S": "80134"
+            }
+        },
+        {
+            "city": {
+                "S": "Carlsbad"
+            },
+            "streetAddress": {
+                "S": "1601 Sapphire Drive"
+            },
+            "dispatched": {
+                "BOOL": false
+            },
+            "identifier": {
+                "S": "13032495156"
+            },
+            "timestamp": {
+                "S": "2025-04-04T05:46:47.696Z"
+            },
+            "longitude": {
+                "N": "-117.28925230230445"
+            },
+            "UUID": {
+                "S": "7553309f-d787-4ac4-94de-acc6fc2d3ab2"
+            },
+            "country": {
+                "S": "United States"
+            },
+            "latitude": {
+                "N": "33.11658089260323"
+            },
+            "postalCode": {
+                "S": "92011"
+            },
+            "formattedAddress": {
+                "S": "1601 Sapphire Dr, Carlsbad, CA 92011, USA"
+            },
+            "state": {
+                "S": "CA"
+            }
+        }
+    ],
+    "Count": 82,
+    "ScannedCount": 82,
+    "ConsumedCapacity": null
+}

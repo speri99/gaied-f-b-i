@@ -1,0 +1,129 @@
+"nodes": [
+    {
+     "data": {
+      "contactInfo": {
+       "email": null,
+       "phone": null,
+       "template": null
+      },
+      "contactMethod": null,
+      "contactType": null,
+      "duration": null,
+      "nodeType": "start",
+      "title": "Start",
+      "unit": null
+     },
+     "id": "node_1751026247473",
+     "position": {
+      "x": -444.5,
+      "y": -91.5
+     },
+     "type": "customNode"
+    },
+    {
+     "data": {
+      "contactInfo": {
+       "email": null,
+       "phone": null,
+       "template": null
+      },
+      "contactMethod": "email",
+      "contactType": "primary",
+      "duration": "5",
+      "nodeType": "contact",
+      "title": "Contact",
+      "unit": "minutes"
+     },
+     "id": "node_1751026602781",
+     "position": {
+      "x": -260,
+      "y": -104.5
+     },
+     "type": "customNode"
+    },
+    {
+     "data": {
+      "contactInfo": {
+       "email": null,
+       "phone": null,
+       "template": null
+      },
+      "contactMethod": null,
+      "contactType": null,
+      "duration": "5",
+      "nodeType": "wait",
+      "title": "Wait",
+      "unit": "minutes"
+     },
+     "id": "node_1751026615204",
+     "position": {
+      "x": -44.5,
+      "y": -97.5
+     },
+     "type": "customNode"
+    },
+    {
+     "data": {
+      "contactInfo": {
+       "email": null,
+       "phone": null,
+       "template": null
+      },
+      "contactMethod": null,
+      "contactType": null,
+      "duration": "5",
+      "nodeType": "ack",
+      "title": "Ack",
+      "unit": "minutes"
+     },
+     "id": "node_1751026617094",
+     "position": {
+      "x": 144.5,
+      "y": -99
+     },
+     "type": "customNode"
+    },
+    {
+     "data": {
+      "contactInfo": {
+       "email": null,
+       "phone": null,
+       "template": null
+      },
+      "contactMethod": null,
+      "contactType": null,
+      "duration": "5",
+      "nodeType": "stop",
+      "title": "Stop",
+      "unit": "minutes"
+     },
+     "id": "node_1751026621055",
+     "position": {
+      "x": 293.5,
+      "y": -102
+     },
+     "type": "customNode"
+    },
+    {
+     "data": {
+      "contactInfo": {
+       "email": null,
+       "phone": null,
+       "template": null
+      },
+      "contactMethod": "phone",
+      "contactType": "secondary",
+      "duration": "5",
+      "nodeType": "contact",
+      "title": "Contact",
+      "unit": "minutes"
+     },
+     "id": "node_1751026631593",
+     "position": {
+      "x": 303,
+      "y": 23
+     },
+     "type": "customNode"
+    }
+   ]
+  }

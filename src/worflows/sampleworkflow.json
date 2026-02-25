@@ -1,0 +1,116 @@
+{
+    "Comment": "Created from canvas",
+    "StartAt": "Contact_1751026602781",
+    "States": {
+      "Contact_1751026602781": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-east-1:123456789012:function:ContactService",
+          "Payload": {
+            "contactMethod": "email",
+            "contactType": "primary",
+            "contactInfo": {
+              "template": null,
+              "phone": null,
+              "email": null
+            },
+            "nodeId": "node_1751026602781"
+          }
+        },
+        "ResultPath": "$.contactResult",
+        "TimeoutSeconds": 300,
+        "Retry": [
+          {
+            "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+            "IntervalSeconds": 2,
+            "MaxAttempts": 3,
+            "BackoffRate": 2
+          }
+        ],
+        "Catch": [
+          {
+            "ErrorEquals": ["States.ALL"],
+            "Next": "ContactError",
+            "ResultPath": "$.error"
+          }
+        ],
+        "Next": "Wait_1751026615204"
+      },
+      "Wait_1751026615204": {
+        "Type": "Wait",
+        "Seconds": 300,
+        "Next": "Ack_1751026617094"
+      },
+      "Ack_1751026617094": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Variable": "$.contactResult.acknowledged",
+            "BooleanEquals": true,
+            "Next": "Stop_1751026621055"
+          },
+          {
+            "Variable": "$.contactResult.acknowledged",
+            "BooleanEquals": false,
+            "Next": "Contact_1751026631593"
+          }
+        ],
+        "Default": "Contact_1751026631593"
+      },
+      "Stop_1751026621055": {
+        "Type": "Pass",
+        "Result": {
+          "message": "Workflow completed successfully",
+          "nodeId": "node_1751026621055",
+          "timestamp": "2025-01-01T00:00:00.000Z"
+        },
+        "End": true
+      },
+      "Contact_1751026631593": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-east-1:123456789012:function:ContactService",
+          "Payload": {
+            "contactMethod": "phone",
+            "contactType": "secondary",
+            "contactInfo": {
+              "template": null,
+              "phone": null,
+              "email": null
+            },
+            "nodeId": "node_1751026631593"
+          }
+        },
+        "ResultPath": "$.contactResult",
+        "TimeoutSeconds": 300,
+        "Retry": [
+          {
+            "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException"],
+            "IntervalSeconds": 2,
+            "MaxAttempts": 3,
+            "BackoffRate": 2
+          }
+        ],
+        "Catch": [
+          {
+            "ErrorEquals": ["States.ALL"],
+            "Next": "ContactError",
+            "ResultPath": "$.error"
+          }
+        ],
+        "End": true
+      },
+      "ContactError": {
+        "Type": "Pass",
+        "Parameters": {
+          "error": "Contact service failed",
+          "cause": "$.error.Cause",
+          "timestamp": "$.error.Timestamp"
+        },
+        "End": true
+      }
+    }
+  }
+  

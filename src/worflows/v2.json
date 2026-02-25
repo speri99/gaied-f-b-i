@@ -1,0 +1,293 @@
+{
+    "Comment": "Generic configurable workflow that handles dynamic steps based on input configuration",
+    "StartAt": "InitializeWorkflow",
+    "States": {
+      "InitializeWorkflow": {
+        "Type": "Pass",
+        "Comment": "Initialize workflow with configuration and set up tracking",
+        "Parameters": {
+          "workflowId.$": "$.workflowId",
+          "config.$": "$.config",
+          "currentStepIndex": 0,
+          "maxRetries.$": "$.config.maxRetries",
+          "globalTimeout.$": "$.config.globalTimeout",
+          "context.$": "$.context",
+          "results": []
+        },
+        "Next": "EvaluateStepCount"
+      },
+      "EvaluateStepCount": {
+        "Type": "Pass",
+        "Parameters": {
+          "workflowId.$": "$.workflowId",
+          "config.$": "$.config",
+          "currentStepIndex.$": "$.currentStepIndex",
+          "maxRetries.$": "$.maxRetries",
+          "globalTimeout.$": "$.globalTimeout",
+          "context.$": "$.context",
+          "results.$": "$.results",
+          "stepCount.$": "States.ArrayLength($.config.steps)"
+        },
+        "Next": "ProcessSteps"
+      },
+      "ProcessSteps": {
+        "Type": "Choice",
+        "Comment": "Check if there are more steps to process",
+        "Choices": [
+          {
+            "Next": "ValidateStepIndex",
+            "Variable": "$.currentStepIndex",
+            "NumericLessThanPath": "$.stepCount"
+          }
+        ],
+        "Default": "WorkflowComplete"
+      },
+      "ValidateStepIndex": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Comment": "Validate if current step index is within bounds",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-west-2:787306238348:function:GEO-ValidateStepIndex:$LATEST",
+          "Payload": {
+            "currentStepIndex.$": "$.currentStepIndex",
+            "totalSteps.$": "$.stepCount"
+          }
+        },
+        "ResultPath": "$.stepValidation",
+        "Next": "CheckStepValidation"
+      },
+      "CheckStepValidation": {
+        "Type": "Choice",
+        "Comment": "Check if step index is valid",
+        "Choices": [
+          {
+            "Variable": "$.stepValidation.Payload.valid",
+            "BooleanEquals": true,
+            "Next": "GetCurrentStep"
+          }
+        ],
+        "Default": "WorkflowComplete"
+      },
+      "GetCurrentStep": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Comment": "Extract current step configuration via Lambda",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-west-2:787306238348:function:GEO-GetCurrentStepConfig:$LATEST",
+          "Payload": {
+            "config.$": "$.config",
+            "currentStepIndex.$": "$.currentStepIndex",
+            "context.$": "$.context",
+            "results.$": "$.results"
+          }
+        },
+        "ResultPath": "$.currentStepData",
+        "Next": "PrepareStepExecution"
+      },
+      "PrepareStepExecution": {
+        "Type": "Pass",
+        "Comment": "Prepare step execution parameters",
+        "Parameters": {
+          "workflowId.$": "$.workflowId",
+          "config.$": "$.config",
+          "currentStepIndex.$": "$.currentStepIndex",
+          "currentStep.$": "$.currentStepData.Payload.currentStep",
+          "context.$": "$.context",
+          "results.$": "$.results",
+          "maxRetries.$": "$.maxRetries",
+          "globalTimeout.$": "$.globalTimeout",
+          "stepCount.$": "$.stepCount"
+        },
+        "Next": "DetermineStepType"
+      },
+      "DetermineStepType": {
+        "Type": "Choice",
+        "Comment": "Route to appropriate handler based on step type",
+        "Choices": [
+          {
+            "Variable": "$.currentStep.type",
+            "StringEquals": "lambda",
+            "Next": "ExecuteLambda"
+          },
+          {
+            "Variable": "$.currentStep.type",
+            "StringEquals": "wait",
+            "Next": "ExecuteWait"
+          },
+          {
+            "Variable": "$.currentStep.type",
+            "StringEquals": "choice",
+            "Next": "ExecuteChoice"
+          }
+        ],
+        "Default": "UnsupportedStepType"
+      },
+      "ExecuteLambda": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Comment": "Execute Lambda function with dynamic configuration",
+        "Parameters": {
+          "Payload.$": "$.currentStep.payload",
+          "FunctionName": "arn:aws:lambda:us-west-2:787306238348:function:GEO-Contact:$LATEST"
+        },
+        "ResultPath": "$.stepExecutionResult",
+        "TimeoutSeconds": 300,
+        "Retry": [
+          {
+            "ErrorEquals": [
+              "Lambda.ServiceException",
+              "Lambda.AWSLambdaException",
+              "Lambda.TooManyRequestsException"
+            ],
+            "IntervalSeconds": 2,
+            "MaxAttempts": 3,
+            "BackoffRate": 2
+          }
+        ],
+        "Catch": [
+          {
+            "ErrorEquals": [
+              "States.ALL"
+            ],
+            "Next": "HandleStepError",
+            "ResultPath": "$.error"
+          }
+        ],
+        "Next": "ProcessStepResult"
+      },
+      "ExecuteWait": {
+        "Type": "Wait",
+        "Comment": "Wait for specified duration",
+        "SecondsPath": "$.currentStep.waitSeconds",
+        "Next": "BuildWaitResult"
+      },
+      "BuildWaitResult": {
+        "Type": "Pass",
+        "Comment": "Creates a dummy stepResult after wait state",
+        "Parameters": {
+          "workflowId.$": "$.workflowId",
+          "config.$": "$.config",
+          "currentStepIndex.$": "$.currentStepIndex",
+          "currentStep.$": "$.currentStep",
+          "context.$": "$.context",
+          "results.$": "$.results",
+          "maxRetries.$": "$.maxRetries",
+          "globalTimeout.$": "$.globalTimeout",
+          "stepCount.$": "$.stepCount",
+          "stepExecutionResult": {
+            "stepType": "wait",
+            "status": "wait_completed",
+            "timestamp.$": "$$.State.EnteredTime"
+          }
+        },
+        "Next": "ProcessStepResult"
+      },
+      "ExecuteChoice": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Comment": "Execute choice logic via Lambda for flexibility",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-west-2:787306238348:function:GEO-AcknowledgmentHandler:$LATEST",
+          "Payload": {
+            "choices.$": "$.currentStep.choices",
+            "context.$": "$.context",
+            "results.$": "$.results",
+            "currentStepIndex.$": "$.currentStepIndex"
+          }
+        },
+        "ResultPath": "$.choiceResult",
+        "Next": "ProcessChoiceResult"
+      },
+      "ProcessChoiceResult": {
+        "Type": "Pass",
+        "Comment": "Process choice result and determine next step",
+        "Parameters": {
+          "workflowId.$": "$.workflowId",
+          "config.$": "$.config",
+          "currentStepIndex.$": "$.choiceResult.Payload.nextStepIndex",
+          "context.$": "$.choiceResult.Payload.updatedContext",
+          "results.$": "$.choiceResult.Payload.updatedResults",
+          "maxRetries.$": "$.maxRetries",
+          "globalTimeout.$": "$.globalTimeout",
+          "stepCount.$": "$.stepCount"
+        },
+        "Next": "EvaluateStepCount"
+      },
+      "ProcessStepResult": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::lambda:invoke",
+        "Comment": "Process step result and update accumulated results",
+        "Parameters": {
+          "FunctionName": "arn:aws:lambda:us-west-2:787306238348:function:GEO-ProcessStepResult:$LATEST",
+          "Payload": {
+            "context.$": "$.context",
+            "results.$": "$.results",
+            "stepExecutionResult.$": "$.stepExecutionResult",
+            "currentStepIndex.$": "$.currentStepIndex",
+            "currentStep.$": "$.currentStep"
+          }
+        },
+        "ResultPath": "$.processedResult",
+        "Next": "IncrementCurrentIndex"
+      },
+      "IncrementCurrentIndex": {
+        "Type": "Pass",
+        "Comment": "Increment step index and maintain state",
+        "Parameters": {
+          "workflowId.$": "$.workflowId",
+          "config.$": "$.config",
+          "currentStepIndex.$": "States.MathAdd($.currentStepIndex, 1)",
+          "context.$": "$.processedResult.Payload.updatedContext",
+          "results.$": "$.processedResult.Payload.updatedResults",
+          "maxRetries.$": "$.maxRetries",
+          "globalTimeout.$": "$.globalTimeout",
+          "stepCount.$": "$.stepCount"
+        },
+        "Next": "EvaluateStepCount"
+      },
+      "HandleStepError": {
+        "Type": "Choice",
+        "Comment": "Handle step errors based on configuration",
+        "Choices": [
+          {
+            "Variable": "$.currentStep.onError",
+            "StringEquals": "continue",
+            "Next": "ProcessStepResult"
+          },
+          {
+            "Variable": "$.currentStep.onError",
+            "StringEquals": "retry",
+            "Next": "RetryStep"
+          }
+        ],
+        "Default": "WorkflowFailed"
+      },
+      "RetryStep": {
+        "Type": "Wait",
+        "Seconds": 5,
+        "Next": "DetermineStepType"
+      },
+      "UnsupportedStepType": {
+        "Type": "Fail",
+        "Comment": "Unsupported step type encountered",
+        "Cause": "Unsupported step type in workflow configuration"
+      },
+      "WorkflowComplete": {
+        "Type": "Pass",
+        "Comment": "Workflow completed successfully",
+        "Parameters": {
+          "status": "completed",
+          "workflowId.$": "$.workflowId",
+          "results.$": "$.results",
+          "context.$": "$.context",
+          "completedAt.$": "$$.State.EnteredTime"
+        },
+        "End": true
+      },
+      "WorkflowFailed": {
+        "Type": "Fail",
+        "Comment": "Workflow failed due to unhandled error",
+        "Cause": "Workflow execution failed due to unhandled error"
+      }
+    }
+  }
